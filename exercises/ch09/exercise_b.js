@@ -6,9 +6,16 @@
 //   // pureLog :: String -> IO ()
 //   const pureLog = str => new IO(() => console.log(str));
 //
+//   // split :: String -> String -> [String]
+//
+//   // last :: [a] -> a
+//
 // Use getFile to get the filepath, remove the directory and keep only the basename,
 // then purely log it. Hint: you may want to use `split` and `last` to obtain the
 // basename from a filepath.
 
+// basename :: String -> String
+const basename = compose(last, split('/'));
+
 // logFilename :: IO ()
-const logFilename = undefined;
+const logFilename = compose(chain(pureLog), map(basename))(getFile)
