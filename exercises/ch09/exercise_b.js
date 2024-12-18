@@ -18,4 +18,4 @@
 const basename = compose(last, split('/'));
 
 // logFilename :: IO ()
-const logFilename = compose(chain(pureLog), map(basename))(getFile)
+const logFilename = compose(chain(pureLog), map(basename))(getFile);
